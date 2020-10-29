@@ -62,8 +62,6 @@ function send_reply_message($url, $post_header, $post_body)
 	
 	return $result;
 }
-
-?>
 function mySQL_selectAll($url)
 {
 	$result = file_get_contents($url);
@@ -78,3 +76,5 @@ function mySQL_selectAll($url)
 	
 	return $data;
 }
+
+?>
