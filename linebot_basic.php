@@ -88,7 +88,7 @@ function selectStd($nameStd)
 	$result_json = json_decode($result, true); //var_dump($result_json);
 	
 	$data = "ผลลัพธ์:\r\n";
-		
+	$data =	$nameStd;
 	foreach($result_json as $values) {
 		$name = $values["user_firstname"] ;
 		$stdfind = explode("นาย",$name);
