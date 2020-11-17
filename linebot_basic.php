@@ -13,7 +13,7 @@ foreach ($request_json['events'] as $event)
 		if($event['message']['type'] == 'text')
 		{
 			$text = $event['message']['text'];
-			$nameStd = explode("ชื่อ",$text);   
+			$nameStd = explode("ชื่อ",$text);
  			//$reply_message = 'ฉันได้รับข้อความ '. $text.' ของคุณแล้ว!';   
 			//$reply_message ="Witthaya";
 			//$reply_message = mySQL_selectAll('http://s61160193.kantit.com/json_select.php');
@@ -90,12 +90,12 @@ function selectStd($nameStd)
 	$data = "ผลลัพธ์:\r\n";
 		
 	foreach($result_json as $values) {
-		$stdfind = explode("นาย",$values["user_firstname"]);
+		//$stdfind = explode("นาย",$values["user_firstname"]);
 			
 			
-		if($nameStd == $stdfind ){
+		//if($nameStd == $stdfind ){
 			$data .= $values["user_stuid"] . " " . $values["user_firstname"] . " " .$values["user_lastname"] . "\r\n";
-		}
+		//}
 	}
 	
 	return $data;
