@@ -21,7 +21,7 @@ foreach ($request_json['events'] as $event)
 			if($nameStd[1]){
 			$reply_message = selectStd($nameStd[1]);
 			}else if($lastname[1]){
-			$reply_message = selectStd($lastname[1]);
+			$reply_message = $lastname[1];
 			}else{
 			$reply_message ='ไม่พบข้อมูล';
 			}
