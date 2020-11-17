@@ -68,7 +68,7 @@ function send_reply_message($url, $post_header, $post_body)
 }
 function mySQL_selectAll($url)
 {
-	$result = file_get_contents(http://bot.kantit.com/json_select_users.php);
+	$result = file_get_contents($url);
 	
 	$result_json = json_decode($result, true); //var_dump($result_json);
 	
@@ -83,7 +83,7 @@ function mySQL_selectAll($url)
 function selectStd($nameStd)
 {
 	
-	$result = file_get_contents($url);
+	$result = file_get_contents(http://bot.kantit.com/json_select_users.php);
 	
 	$result_json = json_decode($result, true); //var_dump($result_json);
 	
