@@ -18,7 +18,7 @@ foreach ($request_json['events'] as $event)
 			//$reply_message ="Witthaya";
 			//$reply_message = mySQL_selectAll('http://s61160193.kantit.com/json_select.php');
 			if($nameStd[1]){
-			$reply_message = $nameStd[1];
+			$reply_message = selectStd($nameStd[1]);
 			}
 			
 		} else {
@@ -68,7 +68,7 @@ function send_reply_message($url, $post_header, $post_body)
 }
 function mySQL_selectAll($url)
 {
-	$result = file_get_contents($url);
+	$result = file_get_contents(http://bot.kantit.com/json_select_users.php);
 	
 	$result_json = json_decode($result, true); //var_dump($result_json);
 	
@@ -76,6 +76,26 @@ function mySQL_selectAll($url)
 		
 	foreach($result_json as $values) {
 		$data .= $values["stuid"] . " " . $values["fullname"] . "\r\n";
+	}
+	
+	return $data;
+}
+function selectStd($nameStd)
+{
+	
+	$result = file_get_contents($url);
+	
+	$result_json = json_decode($result, true); //var_dump($result_json);
+	
+	$data = "ผลลัพธ์:\r\n";
+		
+	foreach($result_json as $values) {
+		$stdfind = explode("นาย",$text);
+			
+			
+		if($nameStd == $stdfind ){
+			$data .= $values["user_stuid"] . " " . $values["user_firstname"] . " " .$values["user_lastname"] . "\r\n";
+		}
 	}
 	
 	return $data;
