@@ -82,8 +82,8 @@ function mySQL_selectAll($url)
 }
 function selectStd($nameStd)
 {
-	
-	$result = file_get_contents(http://bot.kantit.com/json_select_users.php);
+	$url='http://bot.kantit.com/json_select_users.php';
+	$result = file_get_contents($url);
 	
 	$result_json = json_decode($result, true); //var_dump($result_json);
 	
