@@ -89,9 +89,9 @@ function selectStd($nameStd)
 	
 	$data = "ผลลัพธ์:\r\n";
 	foreach($result_json as $values) {
-		$name = $values["user_firstname"] ;
-		$stdfind = explode("นาย",$name);
-		$data .= $stdfind . "\r\n"
+		//$name = $values["user_firstname"] ;
+		//$stdfind = explode("นาย",$name);
+		$data .= $values["user_firstname"] . "\r\n"
 			
 		if($nameStd == $stdfind){
 			$data .= $values["user_stuid"] . " " . $values["user_firstname"] . " " .$values["user_lastname"] . "\r\n";
