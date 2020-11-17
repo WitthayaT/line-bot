@@ -90,7 +90,7 @@ function selectStd($nameStd)
 	$data = "ผลลัพธ์:\r\n";
 		
 	foreach($result_json as $values) {
-		$stdfind = explode("นาย",$text);
+		$stdfind = explode("นาย",$values["user_firstname"]);
 			
 			
 		if($nameStd == $stdfind ){
