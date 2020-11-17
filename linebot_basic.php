@@ -18,7 +18,7 @@ foreach ($request_json['events'] as $event)
 			//$reply_message ="Witthaya";
 			//$reply_message = mySQL_selectAll('http://s61160193.kantit.com/json_select.php');
 			if($nameStd[1]){
-			$reply_message = 'xxx');
+			$reply_message = $nameStd[1];
 			}
 			
 		} else {
