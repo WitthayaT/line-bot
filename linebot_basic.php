@@ -86,8 +86,6 @@ function selectStd($nameStd)
 	$result = file_get_contents($url);
 	
 	$result_json = json_decode($result, true); //var_dump($result_json);
-	
-	$data = "ผลลัพธ์:\r\n";
 	foreach($result_json as $values) {
 		  $pos = strpos($values["user_firstname"], "นาย");
 		  if ($pos !== false) {
@@ -99,7 +97,7 @@ function selectStd($nameStd)
 
 
 		  if($nameStd == $values["user_stuid"] || $nameStd == $first || $nameStd == $values["user_lastname"]){
-		  $data = "พบ:\r\n"; 
+		  $data = "ผลลัพธ์:\r"; 
 		  $data .= $values["user_stuid"] . " " . $values["user_firstname"] . " " . $values["user_lastname"] . "\r\n";
 		  }
 	}
