@@ -89,14 +89,19 @@ function selectStd($nameStd)
 	
 	$data = "ผลลัพธ์:\r\n";
 	foreach($result_json as $values) {
-		//$name = $values["user_firstname"] ;
-		if(strpos($values["user_firstname"]."นาย") == true){
-		$data .= $values["user_firstname"] . "\r\n" ;
-		}
-			
-		if($nameStd == $stdfind){
-			$data .= $values["user_stuid"] . " " . $values["user_firstname"] . " " .$values["user_lastname"] . "\r\n";
-		}
+		  $pos = strpos($values["user_firstname"], "นาย");
+		  if ($pos !== false) {
+		  $first = str_replace("นาย","",$values["user_firstname"]);
+		  }
+		  else{
+		  $first = str_replace("นางสาว","",$values["user_firstname"]);
+		  }
+
+
+		  if($nameStd == $values["user_stuid"] || $nameStd == $first || $nameStd == $values["user_lastname"]){
+		  $data = "พบ:\r\n"; 
+		  $data .= $values["user_stuid"] . " " . $values["user_firstname"] . " " . $values["user_lastname"] . "\r\n";
+		  }
 	}
 	
 	return $data;
