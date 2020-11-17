@@ -19,7 +19,7 @@ foreach ($request_json['events'] as $event)
  			//$reply_message = 'ฉันได้รับข้อความ '. $text.' ของคุณแล้ว!';   
 			//$reply_message ="Witthaya";
 			//$reply_message = mySQL_selectAll('http://s61160193.kantit.com/json_select.php');
-			if($devo == "ใครคือผู้พัฒนา"){
+			if($devo == 'ใครคือผู้พัฒนา'){
 				$reply_message = "61160193 นายวิทยา เทพนวน";
 			}else if($nameStd[1]){
 			$reply_message = selectStd($nameStd[1]);
